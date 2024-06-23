@@ -8,11 +8,12 @@ import AdminPage from "./pages/AdminPage";
 import PrivateRoute from "./helpers/PrivateRoute";
 import AdminRoute from "./helpers/AdminRoute";
 
+const initOptions = { pkceMethod: "S256", checkLoginIframe: false };
 
 function App() {
  return (
    <div>
-     <ReactKeycloakProvider authClient={keycloak}>
+     <ReactKeycloakProvider authClient={keycloak} initOptions={initOptions}>
        <Nav />
        <BrowserRouter>
          <Routes>
